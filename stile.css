@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Pacifico&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #b8e0ff 0%, #e6f7ff 50%, #b8e0ff 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* --- POSTCARD CONTAINER --- */
+.postcard-container {
+    width: 1000px;
+    height: 700px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.9s ease-in-out;
+    cursor: pointer;
+    perspective: 1200px;
+}
+
+.postcard-container:hover {
+    transform: scale(1.02);
+}
+
+.postcard-container.flipped {
+    transform: rotateY(180deg);
+}
+
+.postcard-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* --- FRONT --- */
+.front {
+    background: #fff;
+}
+
+.front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9) contrast(1.1);
+}
+
+.postcard-title {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: #fff;
+    text-shadow: 2px 3px 10px rgba(0, 0, 0, 0.6);
+}
+
+.postcard-title h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 54px;
+    margin-bottom: 6px;
+    letter-spacing: 2px;
+}
+
+.postcard-title p {
+    font-size: 18px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* --- BACK --- */
+.back {
+    background: linear-gradient(180deg, #fffaf0 0%, #f3f3e0 100%);
+    transform: rotateY(180deg);
+    display: flex;
+    padding: 0;
+    border: 1px solid #ddd;
+}
+
+/* --- LEFT SIDE --- */
+.back-left {
+    flex: 1;
+    padding: 50px;
+    border-right: 2px dashed #bbb;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-header {
+    margin-bottom: 25px;
+}
+
+.date {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #5a5a5a;
+}
+
+.location {
+    font-size: 12px;
+    color: #888;
+    margin-top: 3px;
+}
+
+.message-content {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.greeting {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #2b2b2b;
+}
+
+.body-text {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    text-align: justify;
+    color: #333;
+}
+
+.closing {
+    font-size: 14px;
+    margin-top: 20px;
+    color: #2b2b2b;
+}
+
+.signature {
+    font-family: 'Pacifico', cursive;
+    font-size: 22px;
+    display: inline-block;
+    margin-top: 5px;
+    color: #1b75bb;
+}
+
+/* --- RIGHT SIDE --- */
+.back-right {
+    width: 310px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: #eaf7ff;
+}
+
+.stamp {
+    width: 80px;
+    height: 90px;
+    border: 2px solid #1b75bb;
+    background: #fff;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stamp-inner {
+    text-align: center;
+}
+
+.stamp-text {
+    font-size: 11px;
+    font-weight: 600;
+    color: #1b75bb;
+    margin-bottom: 6px;
+}
+
+.stamp-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+}
+
+.address-section {
+    margin-top: 140px;
+    flex: 1;
+}
+
+.address-line {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #222;
+    font-style: italic;
+}
+
+/* --- POSTMARK --- */
+.postmark {
+    position: absolute;
+    top: 35px;
+    left: 30px;
+}
+
+.postmark-circle {
+    width: 85px;
+    height: 85px;
+    border: 2px dotted #1b75bb;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.4;
+    transform: rotate(-5deg);
+}
+
+.postmark-circle p {
+    font-size: 10px;
+    font-weight: bold;
+    color: #1b75bb;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.postmark-date {
+    margin-top: 4px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 950px) {
+    .postcard-container {
+        width: 90vw;
+        height: 60vw;
+        max-width: 900px;
+        max-height: 600px;
+    }
+
+    .back-left {
+        padding: 30px;
+    }
+
+    .back-right {
+        width: 260px;
+    }
+
+    .body-text {
+        font-size: 12px;
+    }
+}

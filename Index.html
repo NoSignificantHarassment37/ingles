@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postcard from Colombia</title>
+    <link rel="stylesheet" href="stile.css">
+</head>
+<body>
+    <div class="postcard-container" onclick="flipPostcard()">
+        <!-- Front of postcard -->
+        <div class="postcard-face front">
+            <img src="ciudad-edificios-hotel-nutibara-medellin-colombia.jpeg" alt="Medellín, Colombia">
+            <div class="postcard-title">
+                <h1>MEDELLÍN</h1>
+                <p>Antioquia, Colombia</p>
+            </div>
+        </div>
+
+        <!-- Back of postcard -->
+        <div class="postcard-face back">
+            <div class="back-left">
+                <div class="message-header">
+                    <p class="date">NOVEMBER 2024</p>
+                    <p class="location">MEDELLÍN, ANTIOQUIA</p>
+                </div>
+                
+                <div class="message-content">
+                    <p class="greeting">Dear Valeria,</p>
+                    
+                    <p class="body-text">
+                        I am writing from Medellín. My friends and I are here on vacation, and we are having a wonderful time! The city is very big and full of life. There are flowers, music, and smiling people everywhere. Every morning we are walking around the streets and trying new food. The traditional dish is “bandeja paisa,” and it is so tasty! The fruits are also amazing; I am eating mango and pineapple almost every day.
+                    </p>
+
+                    <p class="body-text">
+                        The weather is perfect. It is warm, but not too hot. Right now, the sun is shining, and I am sitting in a small café near a park. My friend Laura is taking pictures of the trees, and Diego is buying some souvenirs. In the afternoon, we are going to visit the Botanical Garden, and at night, we are planning to see the lights of the city from a high viewpoint. Everything looks beautiful from up there.
+                    </p>
+
+                    <p class="body-text">
+                        People in Medellín are very friendly. They always smile and help us when we need something. I like the way they speak and how calm they are. I feel safe and happy here. I am also learning some local words in Spanish, and it is fun! Every day I discover something new about this place.
+                    </p>
+
+                    <p class="body-text">
+                        How are your holidays going? Are you traveling somewhere too? I hope you are relaxing and enjoying your free time. I can’t wait to tell you more stories when I get back home.
+                    </p>
+
+                    <p class="closing">
+                        With love,<br>
+                        <span class="signature">Mateo</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="back-right">
+                <div class="stamp">
+                    <div class="stamp-inner">
+                        <p class="stamp-text">COLOMBIA</p>
+                        <p class="stamp-price">$2,500</p>
+                    </div>
+                </div>
+
+                <div class="address-section">
+                    <p class="address-line">Ms. valeria</p>
+                    <p class="address-line">15 Garden Road</p>
+                    <p class="address-line">Seattle, WA 98101</p>
+                    <p class="address-line">United States</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function flipPostcard() {
+            const container = document.querySelector('.postcard-container');
+            container.classList.toggle('flipped');
+        }
+    </script>
+</body>
+</html>
